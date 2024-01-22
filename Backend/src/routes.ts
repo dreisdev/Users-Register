@@ -7,7 +7,7 @@ const rotas = express();
 
 rotas.use(express.json());
 
-rotas.get('/cadastroUsuario', UsersRegister);
+rotas.post('/cadastroUsuario', UsersRegister);
 rotas.get('/login', LoginUser);
 rotas.get('/cadastroPF', ContactsRegister);
 
