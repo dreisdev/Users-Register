@@ -15,11 +15,7 @@ const LoginUser = async (req: Request, res: Response) => {
     try {
 
 
-        console.log('Email recebido:', email);
-
         const user = await User.findOne({ email });
-
-        console.log('Usuário encontrado:', user);
 
         if (!user) {
             return res.status(401).json({ mensagem: 'Email incorreto' });

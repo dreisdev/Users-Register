@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-import cors from 'cors'
+import cors from 'cors';
+
 
 const allowedOrigins = [
 
@@ -44,7 +45,9 @@ app.use(async (req: Request, res: Response, next: NextFunction) => {
 
 
 app.use(express.json());
+
 app.use(rotas);
+
 
 
 
