@@ -21,7 +21,7 @@ export const authenticateToken = (req: CustomRequest, res: Response, next: NextF
     } catch (error) {
         console.error(error);
 
-        return res.status(401).json({ mensagem: 'Token Inválido' });
+        return res.status(401).json({ mensagem: 'Sessão Expirada - Efetue um novo Login.' });
 
 
     }

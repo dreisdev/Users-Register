@@ -33,8 +33,8 @@ const GetAllPerssons = async (req: Request, res: Response) => {
             }
 
             res.status(200).json({
-                mensagem: "Pessoa físicas do Usuário",
-                persons: existingPersons.person,
+                mensagem: `Pessoa físicas do Usuário ${existingPersons.username}`,
+                UserPersons: existingPersons,
             });
 
 
