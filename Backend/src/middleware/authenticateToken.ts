@@ -8,7 +8,7 @@ interface CustomRequest extends Request {
 }
 
 export const authenticateToken = (req: CustomRequest, res: Response, next: NextFunction) => {
-    const token = req.header('Authorization')?.replace('Bearer', '');
+    const token = req.header('Authorization')?.replace('Bearer', '')?.trim();
 
     if (!token) {
         return res.status(401).json({ mensagem: 'Token não fornecido em autheticateToken' });
@@ -20,6 +20,7 @@ export const authenticateToken = (req: CustomRequest, res: Response, next: NextF
         next();
     } catch (error) {
         console.error(error);
+
 
         return res.status(401).json({ mensagem: 'Sessão Expirada - Efetue um novo Login.' });
 

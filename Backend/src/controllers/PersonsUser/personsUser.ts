@@ -11,11 +11,13 @@ const GetAllPerssons = async (req: Request, res: Response) => {
         const { userId } = req.params;
         const tokenFromHeader = req.header('Authorization');
 
-        if (!tokenFromHeader) {
+        if (!tokenFromHeader || !tokenFromHeader.startsWith('Bearer ')) {
             return res.status(401).json({ mensagem: 'Token não fornecido' });
         }
 
-        const decoded = jwt.verify(tokenFromHeader, `${process.env.SECRET_KEY_JWT}`) as { userId: string };
+        const token = tokenFromHeader.split(' ')[1];
+
+        const decoded = jwt.verify(token, `${process.env.SECRET_KEY_JWT}`) as { userId: string };
 
         if (decoded.userId !== userId) {
 
