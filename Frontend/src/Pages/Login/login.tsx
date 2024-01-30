@@ -1,15 +1,17 @@
 import "./login.css";
 import BackgrounLeft from "../../assets/backgrounf-left.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { LoginData } from "../../@types/loginTypes";
 import api from "../../Api/fetchData";
 import UseToast from "../../Hooks/useToast";
-import { SetToken } from "../../utils/storage";
+import { SetId, SetToken } from "../../utils/storage";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+
+  const navigate = useNavigate();
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -25,9 +27,11 @@ const Login: React.FC = () => {
       UseToast(`${response.data.mensagem}`);
 
       SetToken(response.data.token);
+      SetId(response.data.userId);
 
       setEmail("");
       setPassword("");
+      navigate("/dashboard");
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
@@ -36,7 +40,6 @@ const Login: React.FC = () => {
       UseToast(`Erro: ${error.response.data.mensagem}`, "error");
     }
   };
-
   return (
     <div className="container-sign-in">
       <div className="left-sign-in">
