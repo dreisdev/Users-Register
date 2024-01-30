@@ -5,12 +5,16 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MainRoutes from "./routes";
 import { BrowserRouter } from "react-router-dom";
+import { GlobalProvider } from "./Context/GlobalContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ToastContainer />
-      <MainRoutes />
-    </BrowserRouter>
+    <GlobalProvider>
+      <BrowserRouter>
+        <ToastContainer />
+
+        <MainRoutes />
+      </BrowserRouter>
+    </GlobalProvider>
   </React.StrictMode>
 );
