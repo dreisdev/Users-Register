@@ -1,0 +1,58 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 70px;
+  padding: 0 32px;
+
+  background-color: #134563;
+}
+
+.logo {
+  width: 128px;
+  height: 22px;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-content p {
+  color: #ffffff;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+
+.sign-out {
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .profile-content {
+    flex-direction: column;
+  }
+
+  .profile-content p {
+    font-size: 10px;
+    margin-right: 0;
+  }
+
+  .profile {
+    width: 30px;
+    height: 30px;
+  }
+}
