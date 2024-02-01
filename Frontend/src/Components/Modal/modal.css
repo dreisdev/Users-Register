@@ -1,0 +1,89 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 500px;
+}
+
+.modal-header h1 {
+  color: #fff;
+
+  font-family: "Montserrat";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+
+  padding: 5px 10px;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.938);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal-content {
+  width: 100%;
+
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  background: #af5252;
+  border: none;
+  width: 100px !important;
+  height: 50px;
+  /* padding: 5px 10px; */
+  cursor: pointer;
+}
+
+.image-modal img {
+  margin: 0 auto;
+  width: 400px;
+  height: 300px;
+}
+
+@media screen and (max-width: 500px) {
+  .modal-close-button {
+    font-size: 12px;
+    width: 60px !important;
+  }
+
+  .modal-content {
+    width: 100%;
+  }
+}
+/* 
+@media screen and (max-width: 720px) {
+  .modal-content {
+    width: 396px;
+    height: 453px;
+  }
+
+  .btn-confirm button {
+    width: 134px;
+    margin-left: 231px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .modal-content {
+    width: 326px;
+    height: 383px;
+  }
+
+} */
