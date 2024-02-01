@@ -1,0 +1,155 @@
+.container-sign-pf {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+.left-sign-pf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.content {
+  width: 80%;
+  text-align: center;
+}
+
+.form-input-person {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-input-person h2 {
+  margin-top: 10px;
+}
+
+.form-input-person-1,
+.form-input-person-2 {
+  display: flex;
+  gap: 10px;
+}
+
+.content h3 {
+  margin-bottom: 40px;
+}
+
+.content form button:first-of-type {
+  margin: 56px 0 8px 0;
+}
+
+.newAddress,
+.newContact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address-added {
+  display: flex;
+  flex-direction: column;
+  /* margin: 0 auto; */
+}
+
+.content form .newAddress button {
+  width: 15%;
+  background-color: rgb(154, 211, 108);
+  margin: 0;
+}
+
+.content form .newContact button {
+  width: 15%;
+  background-color: rgb(154, 211, 108);
+  margin: 0;
+}
+
+.content h3 {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.right-sign-up {
+  width: 50%;
+}
+
+.right-sign-up img {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20%;
+
+  width: 50%;
+  height: 50vh;
+}
+
+/* .table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.table-line {
+  flex-direction: column;
+}
+
+.line-column {
+  flex-direction: column;
+  background-color: aqua;
+  width: 100%;
+}
+
+.header-column {
+  width: 100%;
+} */
+
+@media screen and (max-width: 1100px) {
+  .container-sign-up {
+    flex-direction: column;
+  }
+
+  .left-sign-up {
+    width: 100%;
+  }
+
+  .right-sign-up {
+    width: 100%;
+  }
+
+  .form-input-1,
+  .form-input-2 {
+    flex-direction: column;
+  }
+
+  .right-sign-up img {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    height: 40vh;
+  }
+
+  .table-header strong {
+    margin-right: 2px;
+    font-size: 8px;
+    word-break: break-word;
+  }
+
+  .table-line span {
+    font-size: 8px;
+  }
+
+  .content form .newAddress button {
+    width: 35%;
+  }
+
+  .content form .newContact button {
+    width: 35%;
+  }
+}

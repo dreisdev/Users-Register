@@ -1,9 +1,17 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface GlobalContextProps {
-  token: string;
-  setToken: (newToken: string) => void;
+  user_Id: string;
+  setUser_Id: (newId: string) => void;
+  dataUser: string[];
+  setDataUser: (newData: string[]) => void;
 }
 
 const GlobalContext = createContext<GlobalContextProps | undefined>(undefined);
@@ -13,14 +21,32 @@ interface GlobalProviderProps {
 }
 
 export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
-  const [token, setToken] = useState("");
+  const [user_Id, setUser_Id] = useState<string>("");
+  const [dataUser, setDataUser] = useState<string[]>([]);
 
-  const handleTokenChange = (newToken: string) => {
-    setToken(newToken);
+  const handleUserIdChange = (newId: string) => {
+    setUser_Id(newId);
+    console.log("contexto funcionando");
+    console.log(user_Id);
   };
 
+  const handleUserData = (newData: string[]) => {
+    setDataUser(newData);
+  };
+
+  useEffect(() => {
+    console.log(user_Id);
+  }, [user_Id]);
+
   return (
-    <GlobalContext.Provider value={{ token, setToken: handleTokenChange }}>
+    <GlobalContext.Provider
+      value={{
+        user_Id,
+        setUser_Id: handleUserIdChange,
+        dataUser,
+        setDataUser: handleUserData,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );

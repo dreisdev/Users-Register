@@ -5,7 +5,7 @@ type ToastStatus = "success" | "error" | null;
 const useToast = (msg: string, status: ToastStatus = null): void => {
   if (!status) {
     toast.success(msg, {
-      position: "top-center",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -13,7 +13,7 @@ const useToast = (msg: string, status: ToastStatus = null): void => {
     });
   } else if (status === "error") {
     toast.error(msg, {
-      position: "top-center",
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,

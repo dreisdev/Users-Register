@@ -93,7 +93,9 @@ const Dashboard = () => {
 
                       <div className="line-column">
                         <span>
-                          {format(new Date(person.birth), "dd/MM/yyyy")}
+                          {person.birth
+                            ? format(new Date(person.birth), "dd/MM/yyyy")
+                            : "Data não inserida"}
                         </span>
                       </div>
 
